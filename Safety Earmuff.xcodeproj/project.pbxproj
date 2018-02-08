@@ -14,6 +14,7 @@
 		691EB9D520288FDC00425B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691EB9D320288FDC00425B09 /* LaunchScreen.storyboard */; };
 		691EB9E020288FDC00425B09 /* Safety_EarmuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EB9DF20288FDC00425B09 /* Safety_EarmuffTests.swift */; };
 		691EB9EB20288FDC00425B09 /* Safety_EarmuffUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EB9EA20288FDC00425B09 /* Safety_EarmuffUITests.swift */; };
+		697718F6202894480030C9BC /* Homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 697718F5202894480030C9BC /* Homepage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		691EB9E620288FDC00425B09 /* Safety EarmuffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safety EarmuffUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691EB9EA20288FDC00425B09 /* Safety_EarmuffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safety_EarmuffUITests.swift; sourceTree = "<group>"; };
 		691EB9EC20288FDC00425B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		697718F5202894480030C9BC /* Homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Homepage.png; path = Images/Homepage.png; sourceTree = SOURCE_ROOT; };
+		69B6D11A2028BACB008435E1 /* Safety Earmuff.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Safety Earmuff.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +100,13 @@
 		691EB9C920288FDC00425B09 /* Safety Earmuff */ = {
 			isa = PBXGroup;
 			children = (
+				69B6D11A2028BACB008435E1 /* Safety Earmuff.entitlements */,
 				691EB9CA20288FDC00425B09 /* AppDelegate.swift */,
 				691EB9CC20288FDC00425B09 /* ViewController.swift */,
 				691EB9CE20288FDC00425B09 /* Main.storyboard */,
 				691EB9D120288FDC00425B09 /* Assets.xcassets */,
 				691EB9D320288FDC00425B09 /* LaunchScreen.storyboard */,
+				697718F5202894480030C9BC /* Homepage.png */,
 				691EB9D620288FDC00425B09 /* Info.plist */,
 			);
 			path = "Safety Earmuff";
@@ -194,6 +199,11 @@
 					691EB9C620288FDC00425B09 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					691EB9DA20288FDC00425B09 = {
 						CreatedOnToolsVersion = 9.2;
@@ -233,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691EB9D520288FDC00425B09 /* LaunchScreen.storyboard in Resources */,
+				697718F6202894480030C9BC /* Homepage.png in Resources */,
 				691EB9D220288FDC00425B09 /* Assets.xcassets in Resources */,
 				691EB9D020288FDC00425B09 /* Main.storyboard in Resources */,
 			);
@@ -426,7 +437,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Safety Earmuff/Safety Earmuff.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MGCJP7HRV3;
 				INFOPLIST_FILE = "Safety Earmuff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mahmudahmad.Safety-Earmuff";
@@ -440,7 +453,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Safety Earmuff/Safety Earmuff.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MGCJP7HRV3;
 				INFOPLIST_FILE = "Safety Earmuff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mahmudahmad.Safety-Earmuff";

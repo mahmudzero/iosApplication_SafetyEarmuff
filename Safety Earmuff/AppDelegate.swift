@@ -5,8 +5,13 @@
 //  Created by Mahmud Ahmad on 2/5/18.
 //  Copyright © 2018 Mahmud Ahmad. All rights reserved.
 //
+// For remote push notifications, I follow this tutorial https://solarianprogrammer.com/2017/02/14/ios-remote-push-notifications-nodejs-backend/
+
 
 import UIKit
+import UserNotifications
+//import MessageUI // trying to open the messages app
+import AudioToolbox // making the phone vibrate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        /*
+            asking user to enable notifications
+         */
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound], completionHandler: {(grated, error) in});
+        application.registerForRemoteNotifications();
+        /*
+            end of asking user to enable notifications
+         */
+        
+        /*
+            trying to do something while app is terminated, but it recieves a notification
+         */
         return true
     }
 
@@ -40,7 +57,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    //added callback functions to manage remote notifications
+    
+    func application(_ _application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Code taken from http://stackoverflow.com/questions/37956482/registering-for-push-notifications-in-xcode-8-swift-3-0
+        // prints the user token on user accepting notifications to the console
+        // this token is unique per device and can change on reinstall, ideally
+        // we store this on a database in the server
+        // it is what allows the server to communicate with the device
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
+        print("success in registering for remote notifications with token \(deviceTokenString)");
+    }
+    
+    func application(_ _application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+    }
+    
+    func application(_ _application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        // here we are printing the actual notification that is recieved,
+        
+        // i think this is where i will put the bluetooth logic to push
+        // a message to the headphones
+        print("Received push notification: \(userInfo)")
+        let aps = userInfo["aps"] as! [String: Any]
+        print("\(aps)");
+        //UIApplication.shared.open(URL(string: "youtube://")!, options: [:], completionHandler: nil); // opening the youtube app
+        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+        }
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
 }
 
