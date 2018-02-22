@@ -21,14 +21,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Homepage.png" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-hi-Adw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knQ-cq-a8g">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knQ-cq-a8g">
                                 <rect key="frame" x="16" y="253.5" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.74123623704663211" green="0.74123623704663211" blue="0.74123623704663211" alpha="0.336212588028169" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AS0-PV-LI7">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AS0-PV-LI7">
                                 <rect key="frame" x="16" y="288.5" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.74123623699999996" green="0.74123623699999996" blue="0.74123623699999996" alpha="0.33621258799999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,15 +91,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="forgot" destination="PVE-JP-rOr" id="gwX-aF-zr3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Page Controller-->
         <scene sceneID="EfH-ge-lg2">
             <objects>
-                <viewController id="RGW-6B-LS8" customClass="ViewController" customModule="Safety_Earmuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainPageController" id="RGW-6B-LS8" customClass="MainPageController" customModule="Safety_Earmuff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQp-Dx-QOL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +140,18 @@
                                 <color key="textColor" red="0.32552873459392651" green="0.77549051522618195" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-SF-HQg">
+                                <rect key="frame" x="168" y="304" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="rpE-PI-a0a"/>
+                                </constraints>
+                                <state key="normal" title="Alert!">
+                                    <color key="titleColor" red="0.95310476824055357" green="1" blue="0.96231828187403268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postAlertToServer:" destination="RGW-6B-LS8" eventType="touchUpInside" id="YpD-Jq-Mg7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -145,15 +160,20 @@
                             <constraint firstItem="eCr-Jg-fyf" firstAttribute="top" secondItem="AfK-rB-mnJ" secondAttribute="top" id="NxY-e6-aiT"/>
                             <constraint firstItem="eCr-Jg-fyf" firstAttribute="top" secondItem="PeI-bs-GwC" secondAttribute="bottom" constant="-30" id="PAy-BP-h2p"/>
                             <constraint firstItem="eCr-Jg-fyf" firstAttribute="height" secondItem="eQp-Dx-QOL" secondAttribute="height" id="WcX-YL-TSt"/>
+                            <constraint firstItem="TzY-SF-HQg" firstAttribute="centerX" secondItem="tGQ-rL-Lfi" secondAttribute="centerX" id="Wgn-tf-au5"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PeI-bs-GwC" secondAttribute="trailing" constant="20" symbolic="YES" id="YKk-jp-Z48"/>
                             <constraint firstItem="tGQ-rL-Lfi" firstAttribute="top" secondItem="UMK-BD-Q7H" secondAttribute="top" constant="75" id="YP2-Sb-eZI"/>
                             <constraint firstItem="eCr-Jg-fyf" firstAttribute="centerX" secondItem="AfK-rB-mnJ" secondAttribute="centerX" id="Yby-rK-yK7"/>
                             <constraint firstItem="UMK-BD-Q7H" firstAttribute="centerX" secondItem="eCr-Jg-fyf" secondAttribute="centerX" id="eeL-Di-uiB"/>
+                            <constraint firstItem="TzY-SF-HQg" firstAttribute="top" secondItem="tGQ-rL-Lfi" secondAttribute="bottom" constant="35" id="flz-7Q-s3a"/>
                             <constraint firstItem="eCr-Jg-fyf" firstAttribute="width" secondItem="eQp-Dx-QOL" secondAttribute="width" id="jjJ-cH-g3W"/>
                             <constraint firstItem="PeI-bs-GwC" firstAttribute="leading" secondItem="eCr-Jg-fyf" secondAttribute="leading" constant="16" id="tRG-ap-9va"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AfK-rB-mnJ"/>
                     </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="tGQ-rL-Lfi" id="HFw-4O-6iz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAs-lO-hjl" sceneMemberID="firstResponder"/>
             </objects>

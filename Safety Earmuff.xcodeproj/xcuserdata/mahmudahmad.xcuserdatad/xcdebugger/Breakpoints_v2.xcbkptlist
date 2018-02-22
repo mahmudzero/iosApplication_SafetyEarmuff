@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Safety Earmuff/AppDelegate.swift"
-            timestampString = "539630342.804993"
+            filePath = "Safety Earmuff/MainPageController.swift"
+            timestampString = "540853087.616545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "applicationWillTerminate(_:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "updateAlertLabel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
