@@ -44,23 +44,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        bgTask = [application beginBackgroundTaskWithName:@"MyTask" expirationHandler:^{
-            // Clean up any unfinished task business by marking where you
-            // stopped or ending the task outright.
-            [application endBackgroundTask:bgTask];
-            bgTask = UIBackgroundTaskInvalid;
-            }];
         
-        
-        
-        // Start the long-running task and return immediately.
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            // Do the work associated with the task, preferably in chunks.
-            
-            [application endBackgroundTask:bgTask];
-            bgTask = UIBackgroundTaskInvalid;
-            });
+        //gotten from Apple documentaiton
+//        bgTask = [application beginBackgroundTaskWithName:@"MyTask" expirationHandler:^{
+//            // Clean up any unfinished task business by marking where you
+//            // stopped or ending the task outright.
+//            [application endBackgroundTask:bgTask];
+//            bgTask = UIBackgroundTaskInvalid;
+//            }];
+//
+//
+//
+//        // Start the long-running task and return immediately.
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//
+//            // Do the work associated with the task, preferably in chunks.
+//
+//            [application endBackgroundTask:bgTask];
+//            bgTask = UIBackgroundTaskInvalid;
+//            });
         
         
         
@@ -87,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // we store this on a database in the server
         // it is what allows the server to communicate with the device
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
-        print("success in registering for remote notifications with token \(deviceTokenString)");
+        //print("success in registering for remote notifications with token \(deviceTokenString)");
     }
     
     func application(_ _application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
