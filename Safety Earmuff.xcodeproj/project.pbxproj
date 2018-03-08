@@ -14,6 +14,7 @@
 		691EB9D520288FDC00425B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691EB9D320288FDC00425B09 /* LaunchScreen.storyboard */; };
 		691EB9E020288FDC00425B09 /* Safety_EarmuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EB9DF20288FDC00425B09 /* Safety_EarmuffTests.swift */; };
 		691EB9EB20288FDC00425B09 /* Safety_EarmuffUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EB9EA20288FDC00425B09 /* Safety_EarmuffUITests.swift */; };
+		6941A0EB204DD4FF003D0C2A /* BLEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941A0EA204DD4FF003D0C2A /* BLEController.swift */; };
 		695113EE203B150000E951B7 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695113ED203B150000E951B7 /* MainPageController.swift */; };
 		697718F6202894480030C9BC /* Homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 697718F5202894480030C9BC /* Homepage.png */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		691EB9E620288FDC00425B09 /* Safety EarmuffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safety EarmuffUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691EB9EA20288FDC00425B09 /* Safety_EarmuffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safety_EarmuffUITests.swift; sourceTree = "<group>"; };
 		691EB9EC20288FDC00425B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6941A0EA204DD4FF003D0C2A /* BLEController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
 		695113ED203B150000E951B7 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		697718F5202894480030C9BC /* Homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Homepage.png; path = Images/Homepage.png; sourceTree = SOURCE_ROOT; };
 		69B6D11A2028BACB008435E1 /* Safety Earmuff.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Safety Earmuff.entitlements"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				691EB9CA20288FDC00425B09 /* AppDelegate.swift */,
 				691EB9CC20288FDC00425B09 /* ViewController.swift */,
 				695113ED203B150000E951B7 /* MainPageController.swift */,
+				6941A0EA204DD4FF003D0C2A /* BLEController.swift */,
 				691EB9CE20288FDC00425B09 /* Main.storyboard */,
 				691EB9D120288FDC00425B09 /* Assets.xcassets */,
 				691EB9D320288FDC00425B09 /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691EB9CD20288FDC00425B09 /* ViewController.swift in Sources */,
+				6941A0EB204DD4FF003D0C2A /* BLEController.swift in Sources */,
 				691EB9CB20288FDC00425B09 /* AppDelegate.swift in Sources */,
 				695113EE203B150000E951B7 /* MainPageController.swift in Sources */,
 			);

@@ -12,6 +12,7 @@ import UIKit
 import UserNotifications
 //import MessageUI // trying to open the messages app
 import AudioToolbox // making the phone vibrate
+import CoreBluetooth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -115,10 +116,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainPageController") ;
         let _main : MainPageController =  window!.rootViewController as! MainPageController;
         _main.updateAlertLabel();
-        
-        
 
     }
+}
+
+extension AppDelegate : CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        // DO SOMETHING WHEN CENTRAL MANAGERs STATUS UPDATES
+    }
+    
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
