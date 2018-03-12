@@ -6,6 +6,13 @@
 //  Copyright © 2018 Mahmud Ahmad. All rights reserved.
 //
 
+/*
+ 
+    ADAFruit BLE wants ASCII
+ 
+ */
+ 
+
 import UIKit
 import CoreBluetooth
 
@@ -19,7 +26,7 @@ class ViewController: UIViewController {
     // Define a CBCharacteristic that controls the LED, used when writing to BLE
     var bleCharacteristic : CBCharacteristic!;
     
-    let toggleLEDUUID = CBUUID(string: "8C08839C-402D-4F4E-B683-5C787EB04E61");
+    let toggleLEDUUID = CBUUID(string: "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"/*"8C08839C-402D-4F4E-B683-5C787EB04E61"*/);
     
     var currentCharacteristicValue : Data!;
     // IB OUTLETS
@@ -27,16 +34,44 @@ class ViewController: UIViewController {
     // IB FUNCTIONS
     
     @IBAction func toggleLED(_ sender: Any) {
-        let dataZero : Data = Data.init(bytes: [0]);
-        let dataOne : Data = Data.init(bytes: [1]);
-        ble.readValue(for: bleCharacteristic);
-        if(currentCharacteristicValue == dataZero) {
-            ble.writeValue(dataOne, for: bleCharacteristic, type: CBCharacteristicWriteType.withResponse);
-        } else {
-            ble.writeValue(dataZero, for: bleCharacteristic, type: CBCharacteristicWriteType.withResponse);
-        }
+//        let dataZero : Data = Data.init(bytes: [0]);
+//        let dataOne : Data = Data.init(bytes: [1]);
+//        ble.readValue(for: bleCharacteristic);
+//        if(currentCharacteristicValue == dataZero) {
+//            ble.writeValue(dataZero, for: bleCharacteristic, type: CBCharacteristicWriteType.withoutResponse);
+//        } else {
+//            ble.writeValue(dataZero, for: bleCharacteristic, type: CBCharacteristicWriteType.withResponse);
+//        }
+    }
+    
+    @IBAction func ledONAdaFruit(_ sender: Any) {
+        let dataOneASCII : Data = Data.init(bytes: [49]);
+        ble.writeValue(dataOneASCII, for: bleCharacteristic, type: CBCharacteristicWriteType.withoutResponse);
         
     }
+    
+    @IBAction func ledOFFAdaFruit(_ sender: Any) {
+        let dataZeroASCII : Data = Data.init(bytes: [48]);
+        ble.writeValue(dataZeroASCII, for: bleCharacteristic, type: CBCharacteristicWriteType.withoutResponse);
+    }
+    
+    @IBAction func emerONAdaFruit(_ sender: Any) {
+        let dataEmergencyASCII : Data = Data.init(bytes: [101]);
+        ble.writeValue(dataEmergencyASCII, for: bleCharacteristic, type: CBCharacteristicWriteType.withoutResponse);
+    }
+    
+    @IBAction func dangONAdaFruit(_ sender: Any) {
+        let dataDangerASCII : Data = Data.init(bytes: [100]);
+        ble.writeValue(dataDangerASCII, for: bleCharacteristic, type: CBCharacteristicWriteType.withoutResponse);
+    }
+    
+    @IBAction func fireONAdaFruit(_ sender: Any) {
+        let dataFireASCII : Data = Data.init(bytes: [102]);
+        ble.writeValue(dataFireASCII, for: bleCharacteristic, type: CBCharacteristicWriteType.withoutResponse);
+    }
+    
+    
+    
     
     
     
@@ -91,7 +126,8 @@ extension ViewController : CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         // In an ideal world, we would know the UUID of the bluetooth device, and wouldn't need to check the name of the bluetooth device,
         // this if statement would not be here if that was the case
-        if(peripheral.name == "capled") {
+        // Chagne the .name == "LIGHT" to "capled" for Cyprus, "LIGHT" is for ADAFruit
+        if(peripheral.name == "LIGHT") {
             // Store the found bluetooth device into our CBPeripheral from the class, and set the delegate to self.
             // This initializes our CBPeripheral, and allows us to use extentions of our ViewController to call the
             // delegate methods of CBPeripheral
@@ -101,6 +137,7 @@ extension ViewController : CBCentralManagerDelegate {
             centralManager.stopScan();
             centralManager.connect(ble);
         }
+//        print(peripheral.name);
     }
     
     // This is a delegate method of CBCentralManager, it is called when the phone connects to the CBPeripheral
@@ -138,8 +175,16 @@ extension ViewController : CBPeripheralDelegate {
         // Loop through available characteristics
         for characteristic in characteristics {
             print(characteristic);
-            if(characteristic.properties.contains(.write)) {
-                print("\(characteristic.uuid): contains .write");
+            // This is for Cyprus
+//            if(characteristic.properties.contains(.write)) {
+//                print("\(characteristic.uuid): contains .write");
+//                bleCharacteristic = characteristic;
+//                peripheral.readValue(for: characteristic);
+//            }
+            
+            // This is for ADAFruit
+            if(characteristic.properties.contains(.writeWithoutResponse)) {
+                print("\(characteristic.uuid): contains .writeWithoutResponse");
                 bleCharacteristic = characteristic;
                 peripheral.readValue(for: characteristic);
             }
@@ -149,10 +194,10 @@ extension ViewController : CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         switch characteristic.uuid {
-        case toggleLEDUUID:
-            currentCharacteristicValue = characteristic.value;
-        default:
-            print("Invalid UUID")
+            case toggleLEDUUID:
+                currentCharacteristicValue = characteristic.value;
+            default:
+                print("Invalid UUID")
         }
     }
 }

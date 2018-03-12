@@ -71,26 +71,71 @@
                                     <action selector="toggleLED:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J8o-sj-10D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-3y-LOE">
+                                <rect key="frame" x="169" y="438" width="37" height="30"/>
+                                <state key="normal" title="Dang"/>
+                                <connections>
+                                    <action selector="dangONAdaFruit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JCN-nI-CmX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYm-2g-wVx">
+                                <rect key="frame" x="226" y="438" width="30" height="30"/>
+                                <state key="normal" title="Fire"/>
+                                <connections>
+                                    <action selector="fireONAdaFruit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WbM-UH-2t4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JF-f5-I8X">
+                                <rect key="frame" x="115" y="438" width="36" height="30"/>
+                                <state key="normal" title="Emer"/>
+                                <connections>
+                                    <action selector="emerONAdaFruit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8QT-ew-xXK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5y-OU-kzp">
+                                <rect key="frame" x="64" y="438" width="30" height="30"/>
+                                <state key="normal" title="On"/>
+                                <connections>
+                                    <action selector="ledONAdaFruit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M18-4g-8Fn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiO-c8-IPX">
+                                <rect key="frame" x="280" y="438" width="30" height="30"/>
+                                <state key="normal" title="Off"/>
+                                <connections>
+                                    <action selector="ledOFFAdaFruit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Qb-7h-YAk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AS0-PV-LI7" firstAttribute="height" secondItem="knQ-cq-a8g" secondAttribute="height" id="6E8-Ob-4za"/>
+                            <constraint firstItem="z5y-OU-kzp" firstAttribute="centerY" secondItem="6JF-f5-I8X" secondAttribute="centerY" id="7ob-Va-nLa"/>
                             <constraint firstItem="AS0-PV-LI7" firstAttribute="centerX" secondItem="yMU-hi-Adw" secondAttribute="centerX" id="Bfz-HM-HPF"/>
+                            <constraint firstItem="wi0-3y-LOE" firstAttribute="leading" secondItem="6JF-f5-I8X" secondAttribute="trailing" constant="18" id="Bsr-fO-5ox"/>
                             <constraint firstItem="LtD-M3-hhP" firstAttribute="centerX" secondItem="yMU-hi-Adw" secondAttribute="centerX" id="CAy-T8-bIL"/>
                             <constraint firstItem="knQ-cq-a8g" firstAttribute="centerY" secondItem="yMU-hi-Adw" secondAttribute="centerY" constant="-85" id="Flg-Ug-NhM"/>
+                            <constraint firstItem="wi0-3y-LOE" firstAttribute="centerY" secondItem="wYm-2g-wVx" secondAttribute="centerY" id="GCq-uC-m8U"/>
                             <constraint firstItem="PVE-JP-rOr" firstAttribute="top" secondItem="LtD-M3-hhP" secondAttribute="top" constant="30" id="Gtq-Mt-lQN"/>
                             <constraint firstItem="49S-gU-j1e" firstAttribute="top" secondItem="AS0-PV-LI7" secondAttribute="top" constant="50" id="NcP-QS-A0h"/>
                             <constraint firstItem="yMU-hi-Adw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OD6-Oh-0CK"/>
                             <constraint firstItem="AS0-PV-LI7" firstAttribute="width" secondItem="knQ-cq-a8g" secondAttribute="width" id="UEx-pt-UMe"/>
                             <constraint firstItem="AS0-PV-LI7" firstAttribute="top" secondItem="knQ-cq-a8g" secondAttribute="top" constant="35" id="XLj-07-T05"/>
                             <constraint firstItem="PVE-JP-rOr" firstAttribute="centerX" secondItem="yMU-hi-Adw" secondAttribute="centerX" id="Xfc-7E-i38"/>
+                            <constraint firstItem="6JF-f5-I8X" firstAttribute="centerY" secondItem="wi0-3y-LOE" secondAttribute="centerY" id="XuJ-1U-huE"/>
                             <constraint firstItem="LtD-M3-hhP" firstAttribute="top" secondItem="49S-gU-j1e" secondAttribute="top" constant="35" id="Y9l-Vf-1IZ"/>
                             <constraint firstItem="knQ-cq-a8g" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-32" id="YCv-tg-a1i"/>
+                            <constraint firstItem="wYm-2g-wVx" firstAttribute="centerY" secondItem="DiO-c8-IPX" secondAttribute="centerY" id="and-0c-hEf"/>
                             <constraint firstItem="yMU-hi-Adw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="bZu-1e-8sb"/>
+                            <constraint firstItem="wi0-3y-LOE" firstAttribute="top" secondItem="PVE-JP-rOr" secondAttribute="bottom" constant="8" id="gU9-6c-Dzh"/>
                             <constraint firstItem="49S-gU-j1e" firstAttribute="centerX" secondItem="yMU-hi-Adw" secondAttribute="centerX" id="grK-qW-prH"/>
                             <constraint firstItem="knQ-cq-a8g" firstAttribute="centerX" secondItem="yMU-hi-Adw" secondAttribute="centerX" id="k4O-bm-XkL"/>
+                            <constraint firstItem="DiO-c8-IPX" firstAttribute="leading" secondItem="wYm-2g-wVx" secondAttribute="trailing" constant="24" id="lVn-wi-fmI"/>
                             <constraint firstItem="yMU-hi-Adw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pOT-xC-5tv"/>
                             <constraint firstItem="yMU-hi-Adw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qU4-Ex-mOm"/>
+                            <constraint firstItem="wi0-3y-LOE" firstAttribute="centerX" secondItem="PVE-JP-rOr" secondAttribute="centerX" id="qjw-Cm-qMH"/>
+                            <constraint firstItem="wYm-2g-wVx" firstAttribute="leading" secondItem="wi0-3y-LOE" secondAttribute="trailing" constant="20" id="sQd-bh-ljw"/>
+                            <constraint firstItem="6JF-f5-I8X" firstAttribute="leading" secondItem="z5y-OU-kzp" secondAttribute="trailing" constant="21" id="xgh-fT-xqU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

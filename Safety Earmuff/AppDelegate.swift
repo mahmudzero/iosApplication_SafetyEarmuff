@@ -12,7 +12,7 @@ import UIKit
 import UserNotifications
 //import MessageUI // trying to open the messages app
 import AudioToolbox // making the phone vibrate
-import CoreBluetooth
+//import CoreBluetooth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -120,13 +120,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate : CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        // DO SOMETHING WHEN CENTRAL MANAGERs STATUS UPDATES
-    }
-    
-    
-}
+//extension AppDelegate : CBCentralManagerDelegate {
+//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+//        // DO SOMETHING WHEN CENTRAL MANAGERs STATUS UPDATES
+//    }
+//
+//
+//}
 
 
 
